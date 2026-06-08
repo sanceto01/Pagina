@@ -1,181 +1,192 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Sanceto01</title>
 
-    <link rel="icon" type="image/png" href="imagen.png">
+```
+<link rel="icon" type="image/png" href="imagen.png">
 
-    <style>
-        body {
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
-            color: white;
-            font-family: "Comic Sans MS", "Comic Sans", cursive;
-            text-align: center;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+<style>
+    body {
+        background: radial-gradient(circle at center, #111 0%, #000 100%);
+        color: white;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        text-align: center;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
 
-        .contenido { z-index: 1; }
+    .contenido { z-index: 1; }
 
-        h1 {
-            font-size: 70px;
-            text-shadow: 0 0 10px #fff, 0 0 25px #0ff;
-            animation: glow 2s infinite alternate;
-        }
+    h1 {
+        font-size: 70px;
+        text-shadow: 0 0 10px #fff, 0 0 25px #0ff;
+        animation: glow 2s infinite alternate;
+    }
 
-        p {
-            font-size: 22px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
+    p {
+        font-size: 22px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
-            to { text-shadow: 0 0 20px #fff, 0 0 40px #0ff; }
-        }
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
+        to { text-shadow: 0 0 20px #fff, 0 0 40px #0ff; }
+    }
 
-        .botones {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+    .botones {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 
-        .boton {
-            padding: 15px 30px;
-            font-size: 20px;
-            width: 260px;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            border-radius: 12px;
-            transition: 0.3s;
-            font-family: "Comic Sans MS", "Comic Sans", cursive;
-        }
+    .boton {
+        padding: 15px 30px;
+        font-size: 20px;
+        width: 260px;
+        border: 2px solid white;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: 0.3s;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
 
-        .boton:hover {
-            color: black;
-            background: white;
-            transform: scale(1.05);
-        }
+    .boton:hover {
+        color: black;
+        background: white;
+        transform: scale(1.05);
+    }
 
-        .lista {
-            max-height: 0;
-            overflow: hidden;
-            transition: 0.4s;
-            width: 260px;
-        }
+    .lista {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+        width: 260px;
+    }
 
-        .lista.activa {
-            max-height: 200px;
-        }
+    .lista.activa {
+        max-height: 200px;
+    }
 
-        .item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border: 1px solid white;
-            margin-top: 5px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.05);
-        }
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid white;
+        margin-top: 5px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.05);
+    }
 
-        .item img {
-            width: 30px;
-            height: 30px;
-        }
+    .item img {
+        width: 30px;
+        height: 30px;
+    }
 
-        .lado {
-            position: fixed;
-            top: 0;
-            width: 200px;
-            height: 100%;
-            background-image: url("imagen.png");
-            background-repeat: repeat-y;
-            background-size: contain;
-            opacity: 0.3;
-            z-index: 0;
-        }
+    .lado {
+        position: fixed;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        background-image: url("imagen.png");
+        background-repeat: repeat-y;
+        background-size: contain;
+        opacity: 0.3;
+        z-index: 0;
+    }
 
-        .izquierda { left: 0; }
-        .derecha {
-            right: 0;
-            transform: scaleX(-1);
-        }
-    </style>
+    .izquierda { left: 0; }
+
+    .derecha {
+        right: 0;
+        transform: scaleX(-1);
+    }
+</style>
+```
+
 </head>
 
 <body>
 
-    <audio id="clickSound" src="click.mp3"></audio>
+```
+<audio id="clickSound" src="click.mp3"></audio>
 
-    <div class="lado izquierda"></div>
-    <div class="lado derecha"></div>
+<div class="lado izquierda"></div>
+<div class="lado derecha"></div>
 
-    <div class="contenido">
-        <h1>Sanceto01</h1>
-        <p>Disfruta la página :)</p>
+<div class="contenido">
+    <h1>Sanceto01</h1>
+    <p>Disfruta la página :)</p>
 
-        <div class="botones">
+    <div class="botones">
 
-            <button class="boton" onclick="abrirLink('https://www.youtube.com/@Sanceto')">
-                Mi yt
-            </button>
+        <button class="boton" onclick="abrirLink('https://www.youtube.com/@Sanceto')">
+            Mi yt
+        </button>
 
-            <button class="boton" onclick="abrirLink('https://sanceto01.itch.io/')">
-                Mi itch.io
-            </button>
+        <button class="boton" onclick="abrirLink('https://sanceto01.itch.io/')">
+            Mi itch.io
+        </button>
 
-            <button class="boton" onclick="abrirLink('https://gamejolt.com/@Sanceto01')">
-                Mi Gamejolt
-            </button>
+        <button class="boton" onclick="abrirLink('https://gamejolt.com/@Sanceto01')">
+            Mi Gamejolt
+        </button>
 
-            <button class="boton" onclick="toggleLista()">
-                Proyectos en desarrollo
-            </button>
+        <button class="boton" onclick="abrirLink('https://soundcloud.com/sanceto01')">
+            Mi SoundCloud
+        </button>
 
-            <div id="lista" class="lista">
-                <div class="item">
-                    <img src="mistery.png">
-                    PROXIMAMENTE REVELADO
-                </div>
+        <button class="boton" onclick="toggleLista()">
+            Proyectos en desarrollo
+        </button>
+
+        <div id="lista" class="lista">
+            <div class="item">
+                <img src="mistery.png">
+                PROXIMAMENTE REVELADO
             </div>
-
         </div>
+
     </div>
+</div>
 
-    <script>
-        function reproducirClick() {
-            let sonido = document.getElementById("clickSound");
-            sonido.currentTime = 0;
-            sonido.play();
+<script>
+    function reproducirClick() {
+        let sonido = document.getElementById("clickSound");
+        sonido.currentTime = 0;
+        sonido.play();
+    }
+
+    function abrirLink(url) {
+        reproducirClick();
+        window.open(url, '_blank');
+    }
+
+    function toggleLista() {
+        reproducirClick();
+
+        let lista = document.getElementById("lista");
+        lista.classList.toggle("activa");
+
+        if (lista.classList.contains("activa")) {
+            setTimeout(() => {
+                lista.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 200);
         }
-
-        function abrirLink(url) {
-            reproducirClick();
-            window.open(url, '_blank');
-        }
-
-        function toggleLista() {
-            reproducirClick();
-
-            let lista = document.getElementById("lista");
-            lista.classList.toggle("activa");
-
-            if (lista.classList.contains("activa")) {
-                setTimeout(() => {
-                    lista.scrollIntoView({ behavior: "smooth", block: "center" });
-                }, 200);
-            }
-        }
-    </script>
+    }
+</script>
+```
 
 </body>
 </html>

@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -18,15 +18,12 @@
 
 html{
     scroll-behavior:smooth;
-    min-height:100%;
 }
 
 body{
 
     background:
     radial-gradient(circle at top,#1b1b1b,#050505);
-
-    background-attachment:fixed;
 
     color:white;
 
@@ -54,7 +51,7 @@ body{
 
     width:180px;
 
-    height:100vh;
+    height:100%;
 
     background-image:url("imagen.png");
 
@@ -85,8 +82,7 @@ body{
 .contenido{
 
     width:100%;
-
-    max-width:700px;
+    max-width:650px;
 
     text-align:center;
 
@@ -342,43 +338,31 @@ display:none;
 
 <button class="boton"
 onclick="abrirLink('https://www.youtube.com/@Sanceto')">
-Mi Youtube
-</button>
+Mi Youtube </button>
 
 <button class="boton"
 onclick="abrirLink('https://sanceto01.itch.io/')">
-Mi itch.io
-</button>
+Mi itch.io </button>
 
 <button class="boton"
 onclick="abrirLink('https://gamejolt.com/@Sanceto01')">
-Mi Gamejolt
-</button>
+Mi Gamejolt </button>
 
 <button class="boton"
 onclick="abrirLink('https://soundcloud.com/sanceto01')">
-Mi SoundCloud
-</button>
+Mi SoundCloud </button>
 
 <button class="boton"
 onclick="abrirLink('https://www.instagram.com/sanceto01/')">
-Mi Instagram
-</button>
+Mi Instagram </button>
 
 <button class="boton"
 onclick="abrirLink('https://sanceto01.newgrounds.com/')">
-Mi NewGrounds
-</button>
-
-<button class="boton"
-onclick="abrirLink('https://x.com/Sanceto01')">
-Mi Twitter
-</button>
+Mi NewGrounds </button>
 
 <button class="boton"
 onclick="toggleLista()">
-Proyectos en desarrollo
-</button>
+Proyectos en desarrollo </button>
 
 <div id="lista" class="lista">
 
@@ -400,45 +384,45 @@ PROXIMAMENTE REVELADO
 
 function reproducirClick(){
 
-    let sonido=document.getElementById("clickSound");
+let sonido=document.getElementById("clickSound");
 
-    sonido.currentTime=0;
+sonido.currentTime=0;
 
-    sonido.play();
+sonido.play();
 
 }
 
 function abrirLink(url){
 
-    reproducirClick();
+reproducirClick();
 
-    window.open(url,"_blank");
+window.open(url,"_blank");
 
 }
 
 function toggleLista(){
 
-    reproducirClick();
+reproducirClick();
 
-    let lista=document.getElementById("lista");
+let lista=document.getElementById("lista");
 
-    lista.classList.toggle("activa");
+lista.classList.toggle("activa");
 
-    if(lista.classList.contains("activa")){
+if(lista.classList.contains("activa")){
 
-        setTimeout(()=>{
+setTimeout(()=>{
 
-            lista.scrollIntoView({
+lista.scrollIntoView({
 
-                behavior:"smooth",
+behavior:"smooth",
 
-                block:"nearest"
+block:"nearest"
 
-            });
+});
 
-        },250);
+},250);
 
-    }
+}
 
 }
 
@@ -447,4 +431,3 @@ function toggleLista(){
 </body>
 
 </html>
-```

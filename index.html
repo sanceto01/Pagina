@@ -1,124 +1,326 @@
 <!DOCTYPE html>
-
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Sanceto01</title>
 
+<head>
+<meta charset="UTF-8">
+<title>Sanceto01</title>
 
 <link rel="icon" type="image/png" href="imagen.png">
 
 <style>
-    body {
-        background: radial-gradient(circle at center, #111 0%, #000 100%);
-        color: white;
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
-        text-align: center;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
 
-    .contenido { z-index: 1; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    h1 {
-        font-size: 70px;
-        text-shadow: 0 0 10px #fff, 0 0 25px #0ff;
-        animation: glow 2s infinite alternate;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    p {
-        font-size: 22px;
-        opacity: 0.8;
-        margin-bottom: 20px;
-    }
+body{
 
-    @keyframes glow {
-        from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
-        to { text-shadow: 0 0 20px #fff, 0 0 40px #0ff; }
-    }
+    background:
+    radial-gradient(circle at top,#1b1b1b,#050505);
 
-    .botones {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
+    color:white;
 
-    .boton {
-        padding: 15px 30px;
-        font-size: 20px;
-        width: 260px;
-        border: 2px solid white;
-        background: transparent;
-        color: white;
-        cursor: pointer;
-        border-radius: 12px;
-        transition: 0.3s;
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
-    }
+    font-family:"Comic Sans MS","Comic Sans",cursive;
 
-    .boton:hover {
-        color: black;
-        background: white;
-        transform: scale(1.05);
-    }
+    min-height:100vh;
 
-    .lista {
-        max-height: 0;
-        overflow: hidden;
-        transition: 0.4s;
-        width: 260px;
-    }
+    overflow-y:auto;
 
-    .lista.activa {
-        max-height: 200px;
-    }
+    display:flex;
 
-    .item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
-        border: 1px solid white;
-        margin-top: 5px;
-        border-radius: 8px;
-        background: rgba(255,255,255,0.05);
-    }
+    justify-content:center;
 
-    .item img {
-        width: 30px;
-        height: 30px;
-    }
+    padding:50px 20px;
 
-    .lado {
-        position: fixed;
-        top: 0;
-        width: 200px;
-        height: 100%;
-        background-image: url("imagen.png");
-        background-repeat: repeat-y;
-        background-size: contain;
-        opacity: 0.3;
-        z-index: 0;
-    }
+}
 
-    .izquierda { left: 0; }
+/* Lados */
 
-    .derecha {
-        right: 0;
-        transform: scaleX(-1);
-    }
+.lado{
+
+    position:fixed;
+
+    top:0;
+
+    width:180px;
+
+    height:100%;
+
+    background-image:url("imagen.png");
+
+    background-repeat:repeat-y;
+
+    background-size:contain;
+
+    opacity:.12;
+
+    pointer-events:none;
+
+}
+
+.izquierda{
+    left:0;
+}
+
+.derecha{
+
+    right:0;
+
+    transform:scaleX(-1);
+
+}
+
+/* Tarjeta principal */
+
+.contenido{
+
+    width:100%;
+    max-width:650px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:
+
+    0 0 25px rgba(0,255,255,.08),
+
+    0 0 80px rgba(255,255,255,.04);
+
+    z-index:2;
+
+}
+
+h1{
+
+    font-size:65px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+    0 0 10px white,
+
+    0 0 30px cyan;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+p{
+
+    font-size:22px;
+
+    opacity:.8;
+
+    margin-bottom:35px;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+0 0 10px white,
+0 0 20px cyan;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px white,
+0 0 40px cyan,
+0 0 70px cyan;
+
+}
+
+}
+
+/* Botones */
+
+.botones{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.boton{
+
+background:linear-gradient(135deg,#202020,#343434);
+
+border:1px solid rgba(255,255,255,.25);
+
+color:white;
+
+padding:16px;
+
+font-size:20px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.30s;
+
+font-family:inherit;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.boton::after{
+
+content:"➜";
+
+font-size:18px;
+
+opacity:.7;
+
+transition:.3s;
+
+}
+
+.boton:hover{
+
+transform:translateY(-3px);
+
+background:linear-gradient(135deg,#00bcd4,#0097a7);
+
+box-shadow:
+
+0 10px 30px rgba(0,255,255,.35);
+
+}
+
+.boton:hover::after{
+
+transform:translateX(6px);
+
+}
+
+/* Lista */
+
+.lista{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .45s ease;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.lista.activa{
+
+max-height:500px;
+
+margin-top:5px;
+
+}
+
+.item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:14px;
+
+border-radius:14px;
+
+transition:.25s;
+
+}
+
+.item:hover{
+
+background:rgba(255,255,255,.15);
+
+transform:scale(1.02);
+
+}
+
+.item img{
+
+width:42px;
+
+height:42px;
+
+border-radius:8px;
+
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+.contenido{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:45px;
+
+}
+
+.boton{
+
+font-size:18px;
+
+}
+
+.lado{
+
+display:none;
+
+}
+
+}
+
 </style>
-
 
 </head>
 
 <body>
-
 
 <audio id="clickSound" src="click.mp3"></audio>
 
@@ -126,76 +328,112 @@
 <div class="lado derecha"></div>
 
 <div class="contenido">
-    <h1>Sanceto01</h1>
-    <p>Disfruta la página :)</p>
 
-    <div class="botones">
+<h1>Sanceto01</h1>
 
-       <button class="boton" onclick="abrirLink('https://www.youtube.com/@Sanceto')">
-           Mi Youtube
-       </button>
-        
-       <button class="boton" onclick="abrirLink('https://sanceto01.itch.io/')">
-            Mi itch.io
-       </button>
-        
-       <button class="boton" onclick="abrirLink('https://gamejolt.com/@Sanceto01')">
-            Mi Gamejolt
-       </button>
-        
-       <button class="boton" onclick="abrirLink('https://soundcloud.com/sanceto01')">
-            Mi SoundCloud
-       </button>
-        
-       <button class="boton" onclick="abrirLink('https://www.instagram.com/sanceto01/')">
-            Instagram
-       </button>
-        
-       <button class="boton" onclick="abrirLink('https://sanceto01.newgrounds.com/')">
-            NewGrounds
-       </button>
-        
-       <button class="boton" onclick="toggleLista()">
-           Proyectos en desarrollo
-       </button>
+<p>Disfruta la página :)</p>
 
+<div class="botones">
 
-        <div id="lista" class="lista">
-            <div class="item">
-                <img src="mistery.png">
-                PROXIMAMENTE REVELADO
-            </div>
-        </div>
+<button class="boton"
+onclick="abrirLink('https://www.youtube.com/@Sanceto')">
+Mi Youtube
+</button>
 
-    </div>
+<button class="boton"
+onclick="abrirLink('https://sanceto01.itch.io/')">
+Mi itch.io
+</button>
+
+<button class="boton"
+onclick="abrirLink('https://gamejolt.com/@Sanceto01')">
+Mi Gamejolt
+</button>
+
+<button class="boton"
+onclick="abrirLink('https://soundcloud.com/sanceto01')">
+Mi SoundCloud
+</button>
+
+<button class="boton"
+onclick="abrirLink('https://www.instagram.com/sanceto01/')">
+Instagram
+</button>
+
+<button class="boton"
+onclick="abrirLink('https://sanceto01.newgrounds.com/')">
+NewGrounds
+</button>
+
+<button class="boton"
+onclick="toggleLista()">
+Proyectos en desarrollo
+</button>
+
+<div id="lista" class="lista">
+
+<div class="item">
+
+<img src="mistery.png">
+
+PROXIMAMENTE REVELADO
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
-    function reproducirClick() {
-        let sonido = document.getElementById("clickSound");
-        sonido.currentTime = 0;
-        sonido.play();
-    }
 
-    function abrirLink(url) {
-        reproducirClick();
-        window.open(url, '_blank');
-    }
+function reproducirClick(){
 
-    function toggleLista() {
-        reproducirClick();
+let sonido=document.getElementById("clickSound");
 
-        let lista = document.getElementById("lista");
-        lista.classList.toggle("activa");
+sonido.currentTime=0;
 
-        if (lista.classList.contains("activa")) {
-            setTimeout(() => {
-                lista.scrollIntoView({ behavior: "smooth", block: "center" });
-            }, 200);
-        }
-    }
+sonido.play();
+
+}
+
+function abrirLink(url){
+
+reproducirClick();
+
+window.open(url,"_blank");
+
+}
+
+function toggleLista(){
+
+reproducirClick();
+
+let lista=document.getElementById("lista");
+
+lista.classList.toggle("activa");
+
+if(lista.classList.contains("activa")){
+
+setTimeout(()=>{
+
+lista.scrollIntoView({
+
+behavior:"smooth",
+
+block:"nearest"
+
+});
+
+},250);
+
+}
+
+}
+
 </script>
 
-
 </body>
+
 </html>
